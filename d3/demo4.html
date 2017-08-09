@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+    </head>
+    <body>
+    <p>Apple</p>
+    <p>Pear</p>
+    <p>Banana</p>
+    <script type="text/javascript">
+        var height = 1000;
+        var width = 1000;
+        var body = d3.select("body");
+        var svg = body.append("svg");
+        var p = body.selectAll("p");
+        
+        var str = "China"
+        p.datum(str);
+        //  d 是数据 i 是索引值 
+        p.text(function(d,i){
+            return '这是第' + i + "个传过来的" + d;
+        });
+
+        var dateset = ["dogs","cats","snakes"];
+        p.data(dateset).text(function(d,i){
+            return d;
+        })
+        var c = body.select('p');
+        c.style('background','blue').style('color','white');
+        var f = c.append('h1');
+        f.text('我是新来的');  
+        f.remove();
+
+    // function a(xx){
+    //     this.x=xx;
+    //     console.log(this);//window
+    //     return this
+    // }
+    // var x=a(5);
+    // var y=a(6);
+    // console.log(x.x);
+    // console.log(y.x);
+
+
+    </script>
+    </body>
+</html>
